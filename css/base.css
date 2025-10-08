@@ -1,0 +1,164 @@
+:root {
+    /* 主色：绿色系 */
+    /* 主色50度，浅绿 */
+    --primary-50: #ecfdef;
+    --primary-100: #d1fae5;
+    --primary-500: #10b981;
+    /* 主色800度，深绿 */
+    --primary-800: #3d8e58f8;
+
+    /* 副色：灰色系 */
+    /* 副色100度，浅灰 */
+    --secondary-300: #c8cbd3;
+    /* 副色80度，深灰 */
+    --secondary-500: #565a62;
+    --secondary-800: #1f2937;
+
+    /* 通用样式变量 */
+    --radius-lg: 0.5rem;
+    --padding-4: 1rem;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* 1. 基础样式重置 - 统一浏览器默认样式 */
+* {
+    /* 外边距：0 */
+    margin: 0;
+    /* 内边距：0 */
+    padding: 0;
+    /* 盒模型尺寸计算方式：包含外边框和内边距 */
+    box-sizing: border-box;
+}
+
+/* 2. 全局基础样式 - 整站统一的基础风格 */
+body {
+    /* 优先显示字体'Microsoft_YaHei',_sans-serif */
+    font-family: 'Microsoft YaHei', sans-serif;
+    /* 背景颜色：主色最浅梯度，这里用绿色系示例值） */
+    background-color: var(--primary-50);
+    /* 文本颜色：副色深灰 */
+    color: var(--secondary-800);
+    /* 最小高度：100%屏幕可见区域高度（确保页面至少占满一屏高度） */
+    min-height: 100vh;
+    /* 启用弹性布局。让main把页脚挤到下面去 */
+    display: flex;
+    /* 子元素垂直排列（main 在上方，footer 在下方） */
+    flex-direction: column;
+    /* 垂直居中（上下方向） */
+    align-items: center;
+    /* 水平居中所有子元素 */
+    /* 新增1：确保body内容不被浏览器控件遮挡 */
+}
+
+/*  利用main自动撑满剩余空间，把 footer 挤到底部 */
+main {
+    /* 关键属性：占据父容器（body）的剩余空间 */
+    flex: 1;
+}
+
+/* 3. 页面容器 - 控制内容显示范围 */
+.page-container {
+    /* 最大宽度：80rem（1280px）。作用：在宽屏设备（如电脑显示器）上，避免内容过度拉伸导致阅读困难。1rem = 16px（默认根元素字体大小），80rem = 80 × 16px = 1280px */
+    max-width: 80rem;
+    /* 左外边距：自动。右外边距：自动。两者配合使用，使容器在父元素中水平居中。 */
+    margin-left: auto;
+    margin-right: auto;
+    /* 左内边距：1rem（16px）。右内边距：1rem（16px）。上内边距：2rem（32px）。下内边距：2rem（32px）。作用：在容器边缘与内容之间保留留白，避免内容贴边，提升可读性，移动端屏幕较小时，留白更明显；大屏设备上，配合 max-width 形成居中布局。*/
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    /* 文本排列：居中对齐 */
+    text-align: center;
+}
+
+/* 4. 页面标题 */
+.page-title {
+    /* 颜色：主色深绿 */
+    color: var(--primary-800);
+    /* 字体尺寸：响应式调整，1.875rem（30px），在小屏幕设备上保持此大小。 */
+    font-size: 1.875rem;
+    /* 字体加粗 */
+    font-weight: bold;
+    /* 外边距底部：1.5rem（24px）*/
+    margin-bottom: 1.5rem;
+}
+
+/* 媒体最小宽度为768px时触发规则。响应式调整：中等屏幕及以上（≥768px） */
+@media (min-width: 768px) {
+    .page-title {
+        /* 字体尺寸：响应式调整，2.25rem（36px），在大屏设备上提升标题视觉效果 */
+        font-size: 2.25rem;
+    }
+}
+
+/* 5. 布局类体系 - 统一页面布局逻辑 */
+/* 5.1 全屏居中布局（适合单卡片、表单等独立内容页） */
+.layout-full-center {
+    /* 启用弹性布局。使当前元素成为弹性容器，子元素将按照弹性布局规则排列 */
+    display: flex;
+    /* 排列元素：垂直方向居中对齐（主轴默认水平） */
+    align-items: center;
+    /* 调整内容：水平方向居中 */
+    justify-content: center;
+    /* 最小高度：整个视口高度（100vh）。确保容器至少占满一屏高度，为垂直居中提供足够空间 */
+    min-height: 100vh;
+    /* 内边距顶： 1rem（16px）。内边距底：1rem（16px）。在容器顶部和底部保留留白，避免内容贴边 */
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+/* 5.2 流式布局（适合列表、多模块组合页） */
+.layout-flow {
+    /* 启用弹性布局。使当前元素成为弹性容器，子元素将按照弹性布局规则排列 */
+    display: flex;
+    /* 弹性布局方向：垂直 */
+    flex-direction: column;
+    /* 子元素间距：1.5rem（24px）。垂直排列的各个模块之间保持统一距离，无需单独设置margin */
+    gap: 1.5rem;
+}
+
+.progress {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+/* space-x-2：子元素之间的水平间距为0.5rem（8px） */
+.progress>*+* {
+    margin-left: 0.5rem;
+}
+
+/* base.css 末尾添加 */
+.card-dots {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    /* 自动换行 */
+    /* 核心1：与卡片保持相同的最大宽度，避免超出卡片范围 */
+    max-width: 28rem;
+    /* 和.card-word的max-width一致 */
+    /* 核心2：宽度为自身最大宽度的80%（即卡片宽度的80%） */
+    width: 80%;
+    /* 核心3：与卡片相同的居中方式，确保水平对齐 */
+    margin-left: auto;
+    margin-right: auto;
+    /* 可选：增加底部间距，与下方内容分隔 */
+    margin-bottom: 2rem;
+}
+
+.card-dots .dot {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: var(--secondary-300);
+    cursor: pointer;
+    transition: background 0.2s;
+    /* 加个过渡更丝滑，可选 */
+}
+
+.card-dots .dot.active {
+    background-color: var(--primary-800);
+}

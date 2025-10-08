@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>水果类</title>
+	<link rel="stylesheet" href="./css/base.css">
+	<link rel="stylesheet" href="./css/card.css">
+	<script src="./js/category-data.js"></script>
+	<script src="./js/category-handler.js" defer></script>
+</head>
+
+<body>
+	<main class="layout-full-center">
+		<div class="page-container">
+			<h1 id="page-title" class="page-title"></h1><!-- page-title==标题id -->
+			<div id="flash-card" class="card-root card-word"><!-- flash-card==闪卡id -->
+				<div class="card-img-container">
+					<img id="flash-card-img" class="card-img" src="" alt=""><!-- flash-card-img==闪卡图片id -->
+				</div>
+				<div class="card-word__row-1">
+					<div class="card-word__en">
+						<h2 id="flash-card-word-en"></h2><!-- flash-card-word-en==闪卡英文单词id -->
+					</div>
+					<div class="card-word__audio">
+						<button id="flash-card-audio-uk"
+							class="card-word__audio-btn"><!-- flash-card-audio-uk==闪卡英式发音id -->
+							<img src="icons/subway--sound.svg" alt="播放音频">
+							<span>英</span>
+						</button>
+						<button id="flash-card-audio-us"
+							class="card-word__audio-btn"><!-- flash-card-audio-us==闪卡美式发音id -->
+							<img src="icons/subway--sound.svg" alt="播放音频">
+							<span>美</span>
+						</button>
+					</div>
+				</div>
+				<div class="card-word__row-2">
+					<p id="flash-card-word-phonetic"></p><!-- flash-card-word-phonetic==闪卡音标id -->
+					<div class="card-word__cn">
+						<p id="flash-card-word-cn"></p><!-- flash-card-word-cn==闪卡中文翻译id -->
+					</div>
+				</div>
+				<div class="card-word__row-3">
+					<p id="flash-card-sentence"></p><!-- flash-card-sentence==闪卡例句id -->
+				</div>
+			</div>
+			<div id="flash-card-dots" class="card-dots"></div><!-- flash-card-dots==闪卡点状指示器id -->
+		</div>
+	</main>
+</body>
+
+</html>
