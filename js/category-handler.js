@@ -296,16 +296,16 @@ document.addEventListener('DOMContentLoaded', () => {
         // 英音按钮（默认本地，切换网络只需改第一个参数为2）
         flashCardAudioUk.addEventListener('click', (e) => {
             e.stopPropagation();
-            playAudio(1, 1); // 本地英音（1=本地，1=英音）
-            //playAudio(2, 1); // 如需网络英音，启用此行
+            //playAudio(1, 1); // 本地英音（1=本地，1=英音）
+            playAudio(2, 1); // 如需网络英音，启用此行
             console.log('播放英音：', window.categoryState.currentCategory.items[window.categoryState.currentIndex].word);
         });
 
         // 美音按钮（默认本地，切换网络只需改第一个参数为2）
         flashCardAudioUs.addEventListener('click', (e) => {
             e.stopPropagation();
-            playAudio(1, 2); // 本地美音（1=本地，2=美音）
-            //playAudio(2, 2); // 如需网络美音，启用此行
+            //playAudio(1, 2); // 本地美音（1=本地，2=美音）
+            playAudio(2, 2); // 如需网络美音，启用此行
             console.log('播放美音：', window.categoryState.currentCategory.items[window.categoryState.currentIndex].word);
         });
     }
